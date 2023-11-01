@@ -28,7 +28,8 @@ You can review the documentation for the functions and test them in the built-in
 ## Build and start project  
 
 U can build and start project only with one command in main dir(easy_web):  
-* make  
+* make
+  *if troubles: u can use next command 'sudo make build2 && sudo make up'*   
 
 ## Tests  
 ![easy_web](img/test0.png)  
