@@ -13,6 +13,7 @@ services:
       - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+  
 
   pgadmin:
     container_name: pgadmin
@@ -22,6 +23,8 @@ services:
       PGADMIN_DEFAULT_PASSWORD: root
     ports:
       - "5050:80"
+    depends_on:
+      - db
 
   app:
     restart: always
@@ -35,6 +38,8 @@ services:
     depends_on:
       - db
       - pgadmin
+    command: /bin/bash -c "chmod +x entrypoint.sh && ./entrypoint.sh"
+    
 
 volumes:
   postgres_data: null
