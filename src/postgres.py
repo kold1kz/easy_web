@@ -6,6 +6,7 @@ from databases import Database
 
 SQLALCHEMY_DATABASE_URL = "postgresql://root:root@pg_db:5432/db"
 
+
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 

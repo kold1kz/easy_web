@@ -24,7 +24,7 @@ def upgrade() -> None:
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('question', sa.String(), nullable=True),
     sa.Column('answer', sa.String(), nullable=True),
-    sa.Column('date', sa.Date(), nullable=True),
+    sa.Column('date', sa.Datetime(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###

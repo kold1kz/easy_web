@@ -1,9 +1,9 @@
 '''models for work with db'''
 from postgres import Base
-from sqlalchemy import String, Integer, Column, Date, MetaData
+from sqlalchemy import String, Integer, Column, DateTime, MetaData
 from pydantic import BaseModel
 from typing import Optional, List
-from datetime import date, datetime
+from datetime import datetime
 
 
 class Victorina(Base):
@@ -12,7 +12,7 @@ class Victorina(Base):
     id = Column(Integer, primary_key=True)
     question = Column(String)
     answer = Column(String)
-    date = Column(Date)
+    date = Column(DateTime)
 
     metadata = MetaData()
 

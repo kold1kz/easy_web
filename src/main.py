@@ -16,9 +16,10 @@ templates = Jinja2Templates(directory="templates")
 
 
 @app.get("/", response_class=HTMLResponse)
-async def home(request: Request):
+async def home(request: Request, db: Session = Depends(get_db)):
     """home page"""
-    info = {"text": "some text"}
+    data = await last_answer(db)
+    info = {"result": {data.id, data.question, data.answer, data.date}}
     return templates.TemplateResponse("index.html",
                                       {"request": request, "data": info})
 
